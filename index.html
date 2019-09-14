@@ -12,41 +12,40 @@
     <div id="logo">
         <img src="./Images/logo-ro.svg" alt="Logo">
     </div>
-    <header>
-        <!-- <div class="container"> -->
-        <nav>
-            <ul>
-                <li class="current"><a href="index.html">Home</a></li>
-                <li class="push"><a href="https://www.rijksoverheid.nl/actueel">Actueel</a></li>
-                <li><a href="https://www.rijksoverheid.nl/onderwerpen">Onderwerpen</a></li>
-                <li><a href="https://www.rijksoverheid.nl/ministeries">Ministeries</a></li>
-                <li><a href="https://www.rijksoverheid.nl/regering">Regering</a></li>
-                <li><a href="https://www.rijksoverheid.nl/documenten">Documenten</a></li>
-                <li><a href="https://www.rijksoverheid.nl/doe-mee">Doe mee</a></li>
-            </ul>
-        </nav>
-        <!-- </div> -->
-    </header>
+
+<header class="header">
+  <a href="index.html" class="logo">Home</a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="https://www.rijksoverheid.nl/actueel">Actueel</a></li>
+    <li><a href="https://www.rijksoverheid.nl/onderwerpen">Onderwerpen</a></li>
+    <li><a href="https://www.rijksoverheid.nl/ministeries">Ministeries</a></li>
+    <li><a href="https://www.rijksoverheid.nl/regering">Regering</a></li>
+    <li><a href="https://www.rijksoverheid.nl/documenten">Documenten</a></li>
+    <li><a href="https://www.rijksoverheid.nl/doe-mee">Doe mee</a></li>
+  </ul>
+</header>    
 
     <section class="osb">
-        <!-- <div class="container"> -->
         <div id="navosb">
             <h1>Veel bekeken</h1>
             <ul>
-                <li><a href="https://www.rijksoverheid.nl/onderwerpen/energie-thuis/vraag-en-antwoord/subsidie-isolatie-huis">Kan ik subsidie krijgen voor de isolatie van mijn huis?</a></li>
-                <li><a href="https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2019">Bedragen minimumloon per 1 juli 2019</a></li>
-                <li><a href="https://www.rijksoverheid.nl/onderwerpen/schoolvakanties/herfstvakantie/herfstvakantie-2019">Wanneer is het herfstvakantie?</a></li>
-                <li><a href="https://www.rijksoverheid.nl/onderwerpen/paspoort-en-identiteitskaart/eisen-pasfoto-paspoort-id-kaart">Eisen pasfoto voor paspoort of id-kaart</a></li>        
+                <li><a href="https://www.rijksoverheid.nl/onderwerpen/energie-thuis/vraag-en-antwoord/subsidie-isolatie-huis">> Kan ik subsidie krijgen voor de isolatie van mijn huis?</a></li>
+                <li><a href="https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2019">> Bedragen minimumloon per 1 juli 2019</a></li>
+                <li><a href="https://www.rijksoverheid.nl/onderwerpen/schoolvakanties/herfstvakantie/herfstvakantie-2019">> Wanneer is het herfstvakantie?</a></li>
+                <li><a href="https://www.rijksoverheid.nl/onderwerpen/paspoort-en-identiteitskaart/eisen-pasfoto-paspoort-id-kaart">> Eisen pasfoto voor paspoort of id-kaart</a></li>        
             </ul>
         </div>
 
-        <div class="search-box">
-            <form action="/action_page.php">
-                <input type="text" placeholder="Zoeken" name="search">
-                <button type="submit" class="button_1"><i class="fas fa-search"></i></button>
-            </form>
-        </div>
-        <!-- </div>  -->
+        <div class="wrap">
+            <div class="search">
+               <input type="text" class="searchTerm" placeholder="Zoeken">
+               <button type="submit" class="searchButton">
+                 <i class="fa fa-search"></i>
+              </button>
+            </div>
+         </div>
     </section>
 
     <section id="boxes4">
@@ -224,13 +223,12 @@
     </section>
 
     <section id="boxes2">
-        <!-- <div class="container"> -->
             <div class="twobox">
                 <a href="https://www.rijksoverheid.nl/contact">
                 <p>
-                    <span style="font-size: 33px; font-family: 'RO Sans',Calibri,Verdana,sans-serif;font-weight:bold;color: #01689B">Vragen</span><br>
-                    <span style="font-size: 33px; font-family: 'RO Sans',Calibri,Verdana,sans-serif;color: black">Bel Informatie<br>Rijksoverheid</span><br>
-                    <span style="font-size: 50px; font-family: 'RO Sans',Calibri,Verdana,sans-serif;font-weight:bold;color: #01689B">1400</span>
+                    <span id="vragen">Vragen</span><br>
+                    <span id="belinformatie">Bel Informatie<br>Rijksoverheid</span><br>
+                    <span id="call">1400</span>
                 </p>
                 </a>
             </div>
@@ -238,12 +236,11 @@
             <div class="twobox">
             <a href="https://www.rijksoverheid.nl/actueel/nieuwsbrieven/regeringsnieuws">
                 <p>
-                    <span style="font-size: 33px; font-family: 'RO Sans',Calibri,Verdana,sans-serif;color: black">Meld u aan voor de</span><br><br>
-                    <span style="font-size: 40px; font-family: 'RO Sans',Calibri,Verdana,sans-serif;font-weight:bold;color: #767676">Nieuwsbrief<br>regeringsnieuws</span>
+                    <span id="meld">Meld u aan voor de</span><br><br>
+                    <span id="nieuwsbrief">Nieuwsbrief<br>regeringsnieuws</span>
                 </p>  
             </a>
             </div>
-        <!-- </div> -->
     </section>
 
     <section class="bottom">
@@ -286,9 +283,5 @@
             <li><a href="https://www.rijksoverheid.nl/onderwerpen/overheidscommunicatie/nederlandse-gebarentaal">Nederlandse Gebarentaal</a></li>
         </ul>
     </footer>
-
-                
-
-    
 </body>
 </html>

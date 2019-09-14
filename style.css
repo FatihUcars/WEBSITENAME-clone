@@ -17,55 +17,134 @@ ul {
 
 #logo {
     display: block;
-    text-align: center;
+    margin-left: 45%;
 }
 
 /* Header */
-header {
+
+/* Toggle Bar*/
+
+a {
+    color: #000;
+  }
+  
+  /* header */
+  
+  .header {
+    /* background-color: #fff; */
     background-color:#01689B;
     color: #ffffff;
-    padding: 15px;
-    min-height: 70px;
-}
-
-header a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1.2rem;
-    line-height: 1em;
-    font-weight: bold;
-    margin: 10px;
-    font-weight: normal;
-}
-
-header a:hover {
-    text-decoration: underline;
-}
-
-header ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    /* box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1); */
+    position: absolute;
+    width: 100%;
+    /* z-index: 3; */
+  }
+  
+  .header ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
-    padding: 15px;
-}
-
-.push {
-    margin-left: auto;
-}
-
-header li a {
-    padding: 10px 5px 10px 5px;
-}
-
-
-header .current a {
-    font-size: 1.8rem;
-    
-}
+    overflow: hidden;
+    background-color: #01689b;
+  }
+  
+  .header a {
+    display: block;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: #ffffff
+  }
+  
+  .header li a:hover,
+  .header .menu-btn:hover {
+    text-decoration: underline;
+  }
+  
+  .header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+  
+  /* menu */
+  
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+  
+  /* menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+  
+  .header .menu-icon .navicon {
+    background: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  
 
 /* osb */
+
 .osb {
     background-image: url('./Images/header-main.jpg');
     background-repeat: no-repeat;
@@ -74,7 +153,8 @@ header .current a {
     min-height: 400px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+    margin-top: 55px;
 }
 
 #navosb {
@@ -111,29 +191,43 @@ header .current a {
 }
 
 /* search box */
-.search-box {
+.wrap {
     margin-left: auto;
-}
-.search-box form {
-    padding: 20px;
+    /* z-index: 4; */
+    padding-top: 20px;
 }
 
-.search-box input[type="text"] {
-    padding: 4px;
-    height: 35px;
-    width: 250px;
+.search {
+    width: 95%;
+    position: relative;
+    display: flex;
+    padding-left: 10px;
+  }
+  
+  .searchTerm {
+    width: 100%;
     border: none;
-}
-
-.button_1 {
+    border-right: none;
+    padding: 5px;
+    height: 45px;
+    outline: none;
+  }
+  
+  .searchTerm:focus{
     color: #ffffff;
-    background-color: black;
-    padding: 0;
-    margin: 0;
-    height: 35px;
-    width: 35px;
+  }
+  
+  .searchButton {
+    width: 45px;
+    height: 45px;
     border: none;
-}
+    background: #000000;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
 
 /* Boxes 4 */
 
@@ -150,8 +244,9 @@ header .current a {
 }
 
 .four-box {
-    width: 250px;
-    margin: 5px 30px 5px 30px;
+    width: 19%;
+    min-width: 180px;
+    margin: 5px 20px 5px 20px;
 }
 
 .four-box h2 {
@@ -182,7 +277,8 @@ header .current a {
 }
 
 .imgbox {
-    width: 370px;
+    /* min-width: 250px; */
+    width: 27%;
     margin: 15px;
 }
 
@@ -221,7 +317,8 @@ header .current a {
 }
 
 .threebox {
-    width: 370px;
+    /* min-width: 220px; */
+    width: 29%;
     margin: 15px;
 }
 
@@ -259,20 +356,50 @@ header .current a {
     flex-direction: row;
     flex-wrap: wrap;
     margin-left: 15px;
+    width: 80%;
 }
 
 .twobox {
-    min-width: 400px;
+    /* width: 400px; */
     border: 3px solid #cbd2e3;
-    padding: 5px;
+    padding: 0 50px 0 50px;
     margin-right: 20px;
     text-align: center;
+    margin-top: 20px;
+    
 }
 
 .twobox a {
     text-decoration: none;
 }
 
+#vragen {
+    font-size: 33px; 
+    font-weight:bold;
+    color: #01689B;
+}
+
+#belinformatie {
+    font-size: 33px;
+    color: black;
+}
+
+#call {
+    font-size: 50px;
+    font-weight:bold;
+    color: #01689B;
+}
+
+#meld {
+    font-size: 33px; 
+    color: black;
+}
+
+#nieuwsbrief {
+    font-size: 40px; 
+    font-weight:bold;
+    color: #767676;
+}
 
 /* Bottom */
 .bottom {
@@ -329,9 +456,14 @@ header .current a {
 footer ul {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     list-style: none;
     padding: 30px 15px 30px 15px;
+}
+
+footer ul li {
+    margin-top: 20px;
 }
 
 footer ul a {
@@ -348,4 +480,167 @@ footer .current2 a {
     border: 0;
     color: #000;
     font-weight: 700;
+}
+
+
+/* Large-Tablets */
+@media only screen and (max-width: 990px) {
+    .four-box {
+        width: 40%;
+    }
+
+    .imgbox {
+        width: 40%;
+    }
+
+    .threebox {
+        width: 41.25%;
+    }
+
+    #boxes2 {
+        width: 95%;
+    }
+
+    
+    
+}
+
+
+/* Tablets */
+@media only screen and (max-width: 768px) {
+    #logo img {
+        height: 90px;
+    }
+    
+    .search-box form {
+        width: 1400px
+
+    }
+
+    .four-box {
+        width: 90%;
+    }
+
+    .twobox {
+        width: 35%;
+        min-width:200px;
+    }
+
+    .wrap{
+        width: 100%;
+        top: 50%;
+      }
+
+    #navosb {
+        width: 90%;
+        margin-right: 4%;
+    }
+
+    .twobox {
+        padding: 2%;
+    }
+
+    #vragen {
+        font-size: 6vw; 
+    }
+    
+    #belinformatie {
+        font-size: 3vw;
+    }
+    
+    #call {
+        font-size: 6vw;
+    }
+    
+    #meld {
+        font-size: 3vw; 
+    }
+    
+    #nieuwsbrief {
+        font-size: 5vw;
+    }
+
+    /* li:nth-child(1) {width: 97%;} */
+}
+
+@media only screen and (min-width: 768px) {
+    .header li {
+      float: left;
+    }
+    .header li a {
+      padding: 20px 15px;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
+    }
+  }
+
+/* Mobile Phones */
+@media only screen and (max-width: 480px) {
+    .imgbox {
+        width: 100%;
+    }
+
+    .threebox {
+        width: 95%;
+    }
+
+    .twobox {
+        width: 95%;
+        margin-top: 20px;
+    }
+
+    #boxes2 {
+        margin-top: 30px;
+    }
+
+    .nav1, .nav2 {
+        width: 50%;
+    }
+
+    .header {
+        padding-bottom: 60px;
+    }
+
+    .wrap {
+        padding-top: 5px;
+    }
+
+    .header ul a {
+        border-bottom: 1px solid #f4f4f4;
+        padding: 5px;
+      }
+
+    .header ul {
+        padding-top: 37px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 990px) {
+    .twobox {
+        width: 45%;
+    }
+
+@media only screen and (max-width: 768px) {
+    .header {
+        padding-bottom: 60px;
+    }
+
+    .wrap {
+        padding-top: 3px;
+    }
+
+    .header ul a {
+        border-bottom: 1px solid #f4f4f4;
+        padding: 5px;
+      }
+
+    .header ul {
+        padding-top: 37px;
+    }
 }
